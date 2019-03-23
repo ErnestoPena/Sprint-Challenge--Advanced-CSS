@@ -164,14 +164,20 @@ img {
   border-radius: 10px;
 }
 .main-header {
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 170px;
+  margin: 0 auto;
+  text-align: center;
   align-items: center;
   justify-content: center;
   padding: 30px;
   margin-bottom: 25px;
   border-bottom: 1px solid #777;
   background-color: #F6F6F6;
+}
+.main-header .navigation {
+  margin-top: 40px;
 }
 .main-header .my-anchor {
   font-size: 1.5rem;
@@ -184,10 +190,26 @@ img {
   border: 1px #F6F6F6 solid;
   border-radius: 0px;
   background-color: #F6F6F6;
+  margin-top: 10px;
 }
 .main-header .my-anchor:hover {
   color: white;
   background-color: black;
+}
+.main-header .my-anchor {
+  animation-name: menu_effect;
+  animation-duration: 1.2s;
+}
+@keyframes menu_effect {
+  0% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 .main-header .my-logo {
   font-size: 5rem;
@@ -207,10 +229,10 @@ img {
 }
 @media (max-width:500px) {
   .main-header {
-    width: auto;
+    width: 100%;
     height: auto;
     align-items: center;
-    margin-top: 5px;
+    margin-top: 0px;
   }
   .main-header .my-anchor {
     font-size: 1.4rem;
@@ -256,14 +278,16 @@ footer {
   justify-content: center;
   align-items: center;
 }
-header {
+.top-image {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
   width: 100%;
+  padding-top: 180px;
+  margin-bottom: 10px;
 }
-header .header-p {
+.top-image .header-p {
   font-size: 1.6rem;
   font-family: inherit;
   color: black;
@@ -277,15 +301,15 @@ header .header-p {
   text-align: justify;
 }
 @media (max-width:500px) {
-  header {
+  .top-image {
     padding-bottom: 0px;
   }
-  header img {
+  .top-image img {
     width: 100%;
     height: auto;
     padding: 0px 1%;
   }
-  header .header-p {
+  .top-image .header-p {
     font-size: 1.6rem;
     font-family: inherit;
     color: black;
