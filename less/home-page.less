@@ -81,10 +81,6 @@ header {
      }
 
 
-
-
-
-
     img {
       width: 28%;
       margin: 20px 2.5%;
@@ -101,6 +97,10 @@ header {
     }
 
     p {
+      .header-p {
+        .p_mixin(@p-font-family: inherit ; @p-font-size:1.6rem ; @p-width: 98% );
+        text-align: justify;
+      }
       margin-top: 13px;
     }
   }
@@ -108,13 +108,24 @@ header {
   .walk-img {
     width: 46%;
     margin-left: 4%;
-    
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
+
+    @media @phone {
+          margin-left: auto;
+          margin-right: auto;
+          width:100%;
+          height: auto;
+          padding: 0px 1%;
+          border-radius: 10px;
+
+          .fix-img {
+            margin-left: auto;
+            margin-right: auto;
+            width:100%;
+            height: auto;
+            padding: 0px 1% 20px 1%;
+          }
     }
-  }
+ }
 
   .walk {
     margin-top: 60px;
@@ -128,61 +139,52 @@ header {
       align-items: center;
       justify-content: center;
       margin: 0 auto;
+      padding: 20px 1% 20px 1%;
       width: 98%;
 
       .walk-text {
         width: 100%;
-
-        .walk-img {
-          margin-left: auto;
-          margin-right: auto;
-          width:100%;
-          height: auto;
-          padding: 0px 3%;
-
-          .fix-img {
-            margin-left: auto;
-            margin-right: auto;
-            width:100%;
-            height: auto;
-            padding: 0px 3%;
-          }
-
-          .btn {
-            .btn_mixin(@btn-font-size: 1.4rem;
-            @btn-font-family: 'Russo One', Courier, monospace;
-            @btn-font-color: white; 
-            @btn-text-transf: uppercase;
-            @btn-text-dec:none;
-            @btn-padding: 5px 12px; 
-            @btn-margin: 0px;  
-            @btn-border-radius: 0px;
-            @btn-width: 80%;
-            @btn-height: 55px; 
-            @btn-bg-color:#22283A);
-            border-radius: 10px;
-            background-color: #22283A;
-    
-           &:hover {
-        
-               background-color:white ;
-               color: #22283A;
-               border: 1px black solid;     
-           }
-        
-        }
-
-
-        }
-
       }
-     
-    
      }
 
 
     .walk-text {
       width: 50%;
+
+      @media @phone {
+        width:100%;
+
+        h3 {
+          margin-bottom: 10px;
+        }
+  
+        p {
+          margin-bottom: 26px;
+        }
+        .btn {
+          .btn_mixin(@btn-font-size: 1.4rem;
+                     @btn-font-family: 'Russo One', Courier, monospace;
+                     @btn-font-color: white; 
+                     @btn-text-transf: uppercase;
+                     @btn-text-dec:none;
+                     @btn-padding: 5px 12px; 
+                     @btn-margin: 0px;  
+                     @btn-border-radius: 0px;
+                     @btn-width: 100%;
+                     @btn-height: 55px; 
+                     @btn-bg-color:#22283A);
+                     border-radius: 10px;
+                     background-color: #22283A;
+  
+         &:hover {
+      
+             background-color:white ;
+             color: #22283A;
+             border: 1px black solid;     
+         }
+        }
+      }
+
 
       h3 {
         margin-bottom: 10px;
@@ -201,7 +203,7 @@ header {
         @btn-padding: 5px 12px; 
         @btn-margin: 0px;  
         @btn-border-radius: 0px;
-        @btn-width: 30%;
+        @btn-width: 100%;
         @btn-height: 55px; 
         @btn-bg-color:#22283A);
         border-radius: 10px;
@@ -213,15 +215,7 @@ header {
            color: #22283A;
            border: 1px black solid;     
        }
-    
     }
-   
-  }
-
-    
-      
-    
-
-
+   }
   }
 }// home
